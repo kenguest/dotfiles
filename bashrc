@@ -53,8 +53,6 @@ alias tail='tail -n $((${LINES:-12}-2)) -s.1' #Likewise, also more responsive -f
 # Don't store duplicate adjacent items in the history
 export HISTCONTROL=ignoreboth
 
-
-
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
@@ -83,16 +81,15 @@ boldPurpleColor='\[\033[1;35m\]'
 boldCyanColor='\[\033[1;36m\]'
 boldWhiteColor='\[\033[1;37m\]'
 
-#hg_ps1() {
-#        #hg prompt "{ on {branch}}{ at {bookmark}}{status}" 2> /dev/null
-#        hg prompt " [{branch}{update}]" 2> /dev/null
-#}
+hg_ps1() {
+        #hg prompt "{ on {branch}}{ at {bookmark}}{status}" 2> /dev/null
+        hg prompt " [{branch}{update}]" 2> /dev/null
+}
 
 #export PS1 ='\u@\h:\w$(hg_ps1)\n$ '
 #export PS1='\[\e[1;29m\]\u@\h\[\e[0m\]:\w\[\e[1;33m\]$(hg_ps1) \[\e[0m\]$ '
 #export PS1='\[\e[1;33m\]$(hg_ps1) \[\e[0m\]\[\e[1;29m\]\[\e[0m\]\w $ '
-#export PS1='\[\e[1;29m\]\u@\h\[\e[0m\]\[\e[1;33m\]$(hg_ps1) \[\e[0m\]\[\e[1;29m\]\[\e[0m\]\w $ '
-export PS1='\[\e[1;29m\]\u@\h\[\e[0m\]\[\e[1;33m\] \[\e[0m\]\[\e[1;29m\]\[\e[0m\]\w $ '
+export PS1='\[\e[1;29m\]\u@\h\[\e[0m\]\[\e[1;33m\]$(hg_ps1) \[\e[0m\]\[\e[1;29m\]\[\e[0m\]\w $ '
 #make filename completion ignore .o, .pyc and *~ files.
 export FIGNORE=".o:~:.pyc"
 #and the same for globs
@@ -109,6 +106,9 @@ export EDITOR=vim
 
 if [ -f ~/dotfiles/work.bashrc ]; then
 	. ~/dotfiles/work.bashrc
+fi
+if [ -f ~/dotfiles/hostspecific/`hostname`.sh ]; then
+	. ~/dotfiles/hostspecific/`hostname`.sh
 fi
 
 # Source global definitions
@@ -174,3 +174,7 @@ fi
 alias findoldphpconstructorsToCSV="phpcs --standard=Squiz --report=csv  --extensions=php --sniffs=Generic.NamingConventions.ConstructorName . | cut -f1,2 -d,"
 export APPLICATION_ENV='development'
 alias hd='od -Ax -tx1z -v'
+if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
+    GIT_PROMPT_ONLY_IN_REPO=1
+    source ~/.bash-git-prompt/gitprompt.sh
+fi
