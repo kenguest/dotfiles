@@ -107,18 +107,18 @@ export GLOBIGNORE=".o:~:.pyc"
 #[ -z $INPUTRC ] && export INPUTRC=/etc/inputrc
 export EDITOR=vim
 
-if [ -f ~/dotFiles/work.bashrc ]; then
-	. ~/dotFiles/work.bashrc
+if [ -f ~/dotfiles/work.bashrc ]; then
+	. ~/dotfiles/work.bashrc
 fi
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
 fi
-source ~/dotFiles/bash_completion
-source ~/dotFiles/git-completion.bash
-source ~/dotFiles/pearcompletion.sh
-source ~/dotFiles/svnen.sh
+source ~/dotfiles/bash_completion
+source ~/dotfiles/git-completion.bash
+source ~/dotfiles/pearcompletion.sh
+source ~/dotfiles/svnen.sh
 #{{{ unarc function for unarchiving files
 function unarc () {
 # Nice unarcing shell function. Does most common things.
