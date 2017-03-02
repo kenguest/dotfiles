@@ -89,7 +89,7 @@ hg_ps1() {
 #export PS1 ='\u@\h:\w$(hg_ps1)\n$ '
 #export PS1='\[\e[1;29m\]\u@\h\[\e[0m\]:\w\[\e[1;33m\]$(hg_ps1) \[\e[0m\]$ '
 #export PS1='\[\e[1;33m\]$(hg_ps1) \[\e[0m\]\[\e[1;29m\]\[\e[0m\]\w $ '
-export PS1='\[\e[1;29m\]\u@\h\[\e[0m\]\[\e[1;33m\]$(hg_ps1) \[\e[0m\]\[\e[1;29m\]\[\e[0m\]\w $ '
+export PS1='\[\e[1;29m\]\u@\h\[\e[0m\]\[\e[1;33m\] \[\e[0m\]\[\e[1;29m\]\[\e[0m\]\w $ '
 #make filename completion ignore .o, .pyc and *~ files.
 export FIGNORE=".o:~:.pyc"
 #and the same for globs
