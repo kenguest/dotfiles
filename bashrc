@@ -81,15 +81,10 @@ boldPurpleColor='\[\033[1;35m\]'
 boldCyanColor='\[\033[1;36m\]'
 boldWhiteColor='\[\033[1;37m\]'
 
-hg_ps1() {
-        #hg prompt "{ on {branch}}{ at {bookmark}}{status}" 2> /dev/null
-        hg prompt " [{branch}{update}]" 2> /dev/null
-}
-
 #export PS1 ='\u@\h:\w$(hg_ps1)\n$ '
 #export PS1='\[\e[1;29m\]\u@\h\[\e[0m\]:\w\[\e[1;33m\]$(hg_ps1) \[\e[0m\]$ '
 #export PS1='\[\e[1;33m\]$(hg_ps1) \[\e[0m\]\[\e[1;29m\]\[\e[0m\]\w $ '
-export PS1='\[\e[1;29m\]\u@\h\[\e[0m\]\[\e[1;33m\]$(hg_ps1) \[\e[0m\]\[\e[1;29m\]\[\e[0m\]\w $ '
+export PS1='\[\e[1;29m\]\u@\h\[\e[0m\]\[\e[1;33m\] \[\e[0m\]\[\e[1;29m\]\[\e[0m\]\w $ '
 #make filename completion ignore .o, .pyc and *~ files.
 export FIGNORE=".o:~:.pyc"
 #and the same for globs
