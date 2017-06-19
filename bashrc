@@ -56,35 +56,11 @@ export HISTCONTROL=ignoreboth
 # check the window size after each command and, if necessary,
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
-#the following PROMPT_COMMAND value isn't useful at the console...
-if [ "$TERM" != "linux" ] ; then
-       export PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME} : : ${PWD}\007"'
-fi
-export PS1='[\u@\h \W]\$ '
-
-noColor='\[\033[0m\]'
-blackColor='\[\033[0;30m\]'
-redColor='\[\033[0;31m\]'
-greenColor='\[\033[0;32m\]'
-yellowColor='\[\033[0;33m\]'
-blueColor='\[\033[0;34m\]'
-purpleColor='\[\033[0;35m\]'
-cyanColor='\[\033[0;36m\]'
-greyColor='\[\033[0;37m\]'
-
-boldGrayColor='\[\033[1;30m\]'
-boldRedColor='\[\033[1;31m\]'
-boldGreenColor='\[\033[1;32m\]'
-boldYellowColor='\[\033[1;33m\]'
-boldBlueColor='\[\033[1;34m\]'
-boldPurpleColor='\[\033[1;35m\]'
-boldCyanColor='\[\033[1;36m\]'
-boldWhiteColor='\[\033[1;37m\]'
-
-#export PS1 ='\u@\h:\w$(hg_ps1)\n$ '
-#export PS1='\[\e[1;29m\]\u@\h\[\e[0m\]:\w\[\e[1;33m\]$(hg_ps1) \[\e[0m\]$ '
-#export PS1='\[\e[1;33m\]$(hg_ps1) \[\e[0m\]\[\e[1;29m\]\[\e[0m\]\w $ '
 export PS1='\[\e[1;29m\]\u@\h\[\e[0m\]\[\e[1;33m\] \[\e[0m\]\[\e[1;29m\]\[\e[0m\]\w $ '
+if [ -f ~/dotfiles/prompt.sh ]; then
+    . ~/dotfiles/prompt.sh
+fi
+
 #make filename completion ignore .o, .pyc and *~ files.
 export FIGNORE=".o:~:.pyc"
 #and the same for globs
