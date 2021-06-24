@@ -1,0 +1,68 @@
+[user]
+    name = Ken Guest
+	email = kguest@php.net
+[includeIf "gitdir:~/linux/**"]
+    # set my email address to my linux.ie one
+    path = ~/dotfiles/.gitconfig_linuxie
+[color]
+  # turn on color
+  diff = auto
+  status = auto
+  branch = auto
+  interactive = auto
+  ui = auto
+[color "branch"]
+  # good looking colors I copy/pasted from somewhere
+  current = green bold
+  local = green
+  remote = red bold
+[color "diff"]
+  # good looking colors I copy/pasted from somewhere
+  meta = yellow bold
+  frag = magenta bold
+  old = red bold
+  new = green bold
+[color "status"]
+  # good looking colors I copy/pasted from somewhere
+  added = green bold
+  changed = yellow bold
+  untracked = red
+[color "sh"]
+  branch = yellow
+[push]
+    default = matching
+[alias]
+ci = commit
+co = checkout
+d  = diff
+# view current working tree status using the short format
+s  = status -s
+# show log in a simple graph format
+lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+uncommit = reset --soft 'HEAD^'
+# various standup aliases
+standup = log --since '1 day ago' --oneline
+wstandup = log --since '1 week ago' --oneline
+ribbon = tag --force _ribbon origin/master
+catchup = log --patch --reverse --topo-order _ribbon..origin/master
+standupken     = log --since '1 day ago' --oneline --author ken@linux.ie
+wstandupken     = log --since '1 week ago' --oneline --author ken@linux.ie
+# aliases that match the hg in / out commands
+out      = !git fetch && git log FETCH_HEAD..
+outgoing = !git fetch && git log FETCH_HEAD..
+in       = !git fetch && git log ..FETCH_HEAD
+incoming = !git fetch && git log ..FETCH_HEAD
+st = status
+br = branch
+[core]
+    autocrlf = input
+    attributesfile = ~/.gitattributes
+	pager = less -F -X
+[giggle]
+    main-window-maximized = true
+    main-window-geometry = 0x0+0+0
+    main-window-view = FileView
+    history-view-vpane-position = 324
+    file-view-vpane-position = 720
+[help]
+	autocorrect = 1

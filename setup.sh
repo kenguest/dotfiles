@@ -28,5 +28,10 @@ if [ ! -f ~/.inputrc ] ; then
 else
 	echo ".inputrc already exists"
 fi
+if [ ! -f ~/.gitconfig ] ; then
+	ln -sv `pwd`/.gitconfig ~/.gitconfig
+else
+	echo ".gitconfig already exists"
+fi
 
 # vi: 
