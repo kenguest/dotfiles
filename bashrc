@@ -47,7 +47,7 @@ alias findoldphpconstructors='phpcs --standard=Squiz --extensions=php --sniffs=G
 alias vimmru='grep ":e " ~/.viminfo  | cut -f2 -d\  | cat -n'
 alias head='head -n $((${LINES:-12}-2))' #as many as possible without scrolling
 alias tail='tail -n $((${LINES:-12}-2)) -s.1' #Likewise, also more responsive -f
-alias hd='od -Ax -tx1z -v'
+alias hd='od -Ax -tx1z -v' # for hex dumps
 
 # don't put duplicate lines or lines starting with space in the history.
 #export HISTCONTROL="ignoredups"
@@ -144,9 +144,9 @@ if ! shopt -oq posix; then
   fi
 fi
 alias findoldphpconstructorsToCSV="phpcs --standard=Squiz --report=csv  --extensions=php --sniffs=Generic.NamingConventions.ConstructorName . | cut -f1,2 -d,"
-export APPLICATION_ENV='development'
 export PATH="$PATH:$HOME/bin"
 if [ -f ~/.bash-git-prompt/gitprompt.sh ]; then
     GIT_PROMPT_ONLY_IN_REPO=1
     source ~/.bash-git-prompt/gitprompt.sh
 fi
+export PATH="$PATH:$HOME/bin"
