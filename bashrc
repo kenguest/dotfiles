@@ -19,7 +19,6 @@ export LESS="-RSi"
 alias ..="cd .."        #go to parent dir
 alias ...="cd ../.."    #go to grandparent dir
 alias s='cd ..'
-alias ss='cd ../..'
 alias d='ls --color=tty'
 alias p='cd -'
 alias ll='ls -l --color=tty'
@@ -37,6 +36,8 @@ alias cfgrep='find . -type f -name \*cf? | xargs grep --color=auto'
 alias cssgrep='find . -type f -name \*css | xargs grep --color=auto'
 alias jsgrep='find . -type f -name \*js | xargs grep --color=auto'
 alias phpgrep='find . -type f -name \*php  -print0  -or -type f -name \*phtml -print0 | xargs -0 grep --color=auto'
+alias jsphpgrep='find . -type f -and -name \*js -print0 -or -name \*php -and -type f -print0 | xargs -0 grep --color=auto'
+alias phpjsgrep='find . -type f -and -name \*js -print0 -or -name \*php -and -type f -print0 | xargs -0 grep --color=auto'
 alias cfegrep='find . -type f -name \*cf?  -print0 | xargs -0 egrep --color=auto'
 alias cssegrep='find . -type f -name \*css -print0 | xargs -0 egrep --color=auto'
 alias php_beautifier='php_beautifier -l "Pear() KeepEmptyLines() BreakLongLists() SpaceOpAssignments() SpaceCasts()"'
